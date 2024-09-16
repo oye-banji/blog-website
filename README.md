@@ -15,3 +15,6 @@ Future Plans
 - Search Functionality: Implement a search feature to help users find specific content quickly.
 - Image Support: Add and display images within blog posts to enhance visual appeal.
 - User Management: Secure authentication and authorization for managing posts and user interactions.
+
+here is video previw of the website(you may have to download it):
+https://github.com/oye-banji/blog-website/blob/main/blog%20%20vid.mov
