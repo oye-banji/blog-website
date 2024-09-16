@@ -1,3 +1,4 @@
+
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -7,11 +8,18 @@ const blogRoutes = require('./routes/blogRoutes');
 const app = express();
 
 // connect to mongodb & listen for requests
-const dbURI = "mongodb+srv://netninja:test1234@NodeLearn.nxo08.mongodb.net/"
+
+
+const dbURI = "mongodb+srv://netninja:test1234@NodeLearn.nxo08.mongodb.net/mydatabase?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI)
-  .then(result => app.listen(3000))
-  .catch(err => console.log(err));
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(3000, () => console.log('Server running on port 3000'));
+  })
+  .catch(err => {
+    console.error('Failed to connect to MongoDB:', err.message);
+  });
 
 // register view engine
 app.set('view engine', 'ejs');
